@@ -1,0 +1,199 @@
+[gd_scene load_steps=17 format=3 uid="uid://bm5x44xkgb83x"]
+
+[ext_resource type="Texture2D" uid="uid://rbgeuf04xjgi" path="res://Assets/Untitled61.png" id="1_iex1n"]
+[ext_resource type="Script" path="res://Levels/Interface/Settings.gd" id="1_quty5"]
+[ext_resource type="Texture2D" uid="uid://b4j0ruo17bevh" path="res://Assets/Wenrexa Assets GUI Dark Miko/ProgressBar Green/V3/Background Static.png" id="2_oclhf"]
+[ext_resource type="Texture2D" uid="uid://04wcl53uhpyy" path="res://Assets/Fonts and GUI/Fonts and GUI/Icons/Icon_Large_Audio_Grey.png" id="3_kb78d"]
+[ext_resource type="Texture2D" uid="uid://bdiaofabyfo6p" path="res://Assets/Fonts and GUI/Fonts and GUI/Icons/Icon_Large_AudioOff_Blank.png" id="4_hfmxy"]
+[ext_resource type="Texture2D" uid="uid://b8twx5lv45p5p" path="res://Assets/Fonts and GUI/Fonts and GUI/Icons/Icon_Large_Audio_Blank.png" id="5_5ppcg"]
+[ext_resource type="FontFile" uid="uid://d22hc8mbnbru3" path="res://Assets/texts/Born2bSportyV2.ttf" id="6_h3wjl"]
+[ext_resource type="Texture2D" uid="uid://ceuv1fsh46qhm" path="res://Assets/Fonts and GUI/Fonts and GUI/Icons/Icon_Large_Music_Grey.png" id="6_u0l1n"]
+[ext_resource type="AudioStream" uid="uid://bba2watssv1ma" path="res://Assets/Sound/Click_02.ogg" id="7_6dj27"]
+[ext_resource type="Texture2D" uid="uid://crhoejpuntkxk" path="res://Assets/Fonts and GUI/Fonts and GUI/Icons/Icon_Large_MusicOff_Blank.png" id="7_eghk4"]
+[ext_resource type="Texture2D" uid="uid://f2u6nd5v7p58" path="res://Assets/Fonts and GUI/Fonts and GUI/Icons/Icon_Large_Music_Blank.png" id="8_meum0"]
+[ext_resource type="PackedScene" uid="uid://ca356peuwdlly" path="res://Levels/Interface/UI Canvas.tscn" id="10_qdx84"]
+[ext_resource type="PackedScene" uid="uid://lsinthe7ttsf" path="res://Levels/Interface/background_music.tscn" id="13_mc853"]
+
+[sub_resource type="Animation" id="Animation_x8sp3"]
+resource_name = "Fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7aamq"]
+resource_name = "Fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5tusq"]
+_data = {
+"Fade_in": SubResource("Animation_x8sp3"),
+"Fade_out": SubResource("Animation_7aamq")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_quty5")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.792157)
+layout_mode = 0
+offset_right = 2118.0
+offset_bottom = 1094.0
+texture = ExtResource("1_iex1n")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.615686)
+layout_mode = 0
+offset_left = -87.0
+offset_top = -29.0
+offset_right = 2264.0
+offset_bottom = 1149.0
+texture = ExtResource("2_oclhf")
+
+[node name="Sound" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 576.0
+offset_right = 1130.0
+offset_bottom = 820.0
+toggle_mode = true
+texture_normal = ExtResource("3_kb78d")
+texture_pressed = ExtResource("4_hfmxy")
+texture_hover = ExtResource("5_5ppcg")
+stretch_mode = 0
+
+[node name="Text" type="Label" parent="Sound"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = 254.0
+offset_right = 428.0
+offset_bottom = 354.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_h3wjl")
+theme_override_font_sizes/font_size = 100
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1469.0
+offset_top = 81.0
+offset_right = 1688.0
+offset_bottom = 327.0
+toggle_mode = true
+texture_normal = ExtResource("6_u0l1n")
+texture_pressed = ExtResource("7_eghk4")
+texture_hover = ExtResource("8_meum0")
+stretch_mode = 0
+
+[node name="Text" type="Label" parent="Music"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = 254.0
+offset_right = 428.0
+offset_bottom = 354.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_h3wjl")
+theme_override_font_sizes/font_size = 100
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 94.0
+offset_right = 568.0
+offset_bottom = 338.0
+toggle_mode = true
+texture_normal = ExtResource("3_kb78d")
+texture_pressed = ExtResource("4_hfmxy")
+texture_hover = ExtResource("5_5ppcg")
+stretch_mode = 0
+
+[node name="Text" type="Label" parent="SFX"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = 254.0
+offset_right = 428.0
+offset_bottom = 354.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_h3wjl")
+theme_override_font_sizes/font_size = 100
+text = "SFX Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" parent="." instance=ExtResource("10_qdx84")]
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(930, 576)
+stream = ExtResource("7_6dj27")
+volume_db = -20.0
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5tusq")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+visible = false
+offset_right = 2153.0
+offset_bottom = 1134.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background Music" parent="." instance=ExtResource("13_mc853")]
+
+[connection signal="pressed" from="Sound" to="." method="_on_sound_pressed"]
+[connection signal="pressed" from="Music" to="." method="_on_music_pressed"]
+[connection signal="pressed" from="SFX" to="." method="_on_sfx_pressed"]

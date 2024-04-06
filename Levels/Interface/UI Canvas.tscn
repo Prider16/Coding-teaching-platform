@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca356peuwdlly"]
+
+[ext_resource type="Texture2D" uid="uid://bpwcn5ufi7cqn" path="res://Assets/Fonts and GUI/Fonts and GUI/Icons/Icon_Small_WhiteOutline_Home.png" id="1_57n2a"]
+[ext_resource type="Script" path="res://Levels/Interface/UI Canvas.gd" id="1_w5i2v"]
+[ext_resource type="Texture2D" uid="uid://vtyn8hdug2jc" path="res://Assets/Fonts and GUI/Fonts and GUI/Icons/Icon_Small_Blank_Home.png" id="2_xstik"]
+[ext_resource type="AudioStream" uid="uid://bba2watssv1ma" path="res://Assets/Sound/Click_02.ogg" id="4_8rfnw"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_w5i2v")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1926.0
+offset_top = 13.0
+offset_right = 2092.0
+offset_bottom = 182.0
+texture_normal = ExtResource("1_57n2a")
+texture_hover = ExtResource("2_xstik")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(930, 576)
+stream = ExtResource("4_8rfnw")
+volume_db = -20.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="finished" from="Click" to="." method="_on_click_finished"]

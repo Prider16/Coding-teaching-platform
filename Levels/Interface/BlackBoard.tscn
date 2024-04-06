@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6787p0b53af7"]
+
+[ext_resource type="Texture2D" uid="uid://bfcvjqg7vrv0i" path="res://Assets/texts/black board.jpg" id="1_qera7"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Black Board" type="TextureRect" parent="."]
+offset_left = 64.0
+offset_top = 71.0
+offset_right = 1465.0
+offset_bottom = 871.0
+texture = ExtResource("1_qera7")

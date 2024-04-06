@@ -1,0 +1,265 @@
+[gd_scene load_steps=16 format=3 uid="uid://dm0gu06ront22"]
+
+[ext_resource type="Script" path="res://Levels/Level4/Level 4C.gd" id="1_5nf6w"]
+[ext_resource type="Texture2D" uid="uid://rbgeuf04xjgi" path="res://Assets/Untitled61.png" id="1_pibd8"]
+[ext_resource type="Texture2D" uid="uid://cwc3md34mq1ev" path="res://Assets/scroll/pngs/wide.png" id="2_oko5q"]
+[ext_resource type="Texture2D" uid="uid://cqiyycnakbagr" path="res://Assets/Wenrexa Assets GUI Dark Miko/Standart Button V1/Standart Button Disable/Standart Button Disable 3.png" id="3_ko3ok"]
+[ext_resource type="Texture2D" uid="uid://bd3k4rsj6f44u" path="res://Assets/Wenrexa Assets GUI Dark Miko/Standart Button V2/Standart Button Active/Standart Button Active 3.png" id="4_hpowm"]
+[ext_resource type="Texture2D" uid="uid://dqo8o8klsf2q1" path="res://Assets/Wenrexa Assets GUI Dark Miko/Standart Button V1/Standart Button Active/Standart Button Active 3.png" id="5_l7fba"]
+[ext_resource type="Texture2D" uid="uid://xscdp5kwtbjx" path="res://Assets/Wenrexa Assets GUI Dark Miko/Standart Button V2/Standart Button Hover/Standart Button Hover 3.png" id="6_i3vv1"]
+[ext_resource type="Texture2D" uid="uid://ble52wfl6s5vf" path="res://Assets/Wenrexa Assets GUI Dark Miko/ProgressBar Light Blue/V1/Background Static.png" id="7_k4x44"]
+[ext_resource type="FontFile" uid="uid://qbwj8dicp03v" path="res://Assets/texts/TTVTechPrecomputer.ttf" id="7_vgw0m"]
+[ext_resource type="Texture2D" uid="uid://kuge4nc0iqox" path="res://Assets/Wenrexa Assets GUI Dark Miko/ProgressBar Light Blue/V1/Foreground.png" id="8_seie0"]
+[ext_resource type="Texture2D" uid="uid://c7v4n4o7j60pu" path="res://Assets/Wenrexa Assets GUI Dark Miko/ProgressBar Light Blue/V1/Background Bar.png" id="9_r7qha"]
+[ext_resource type="Texture2D" uid="uid://buowgqjj665b4" path="res://Assets/scroll/pngs/parts/ribbon.png" id="10_7oavh"]
+[ext_resource type="Texture2D" uid="uid://cd6jepabh2as2" path="res://Assets/scroll/pngs/parts/paper.png" id="11_oujos"]
+[ext_resource type="FontFile" uid="uid://bshq20md5oncb" path="res://Assets/texts/ComputergamesOa.ttf" id="14_enhrj"]
+[ext_resource type="PackedScene" uid="uid://ca356peuwdlly" path="res://Levels/Interface/UI Canvas.tscn" id="15_2p5q3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5nf6w")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.745098)
+layout_mode = 0
+offset_right = 2118.0
+offset_bottom = 1094.0
+texture = ExtResource("1_pibd8")
+
+[node name="Scroll" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 33.0
+offset_right = 905.0
+offset_bottom = 702.0
+texture = ExtResource("2_oko5q")
+expand_mode = 1
+
+[node name="Code" type="Label" parent="Scroll"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 261.0
+offset_right = 774.0
+offset_bottom = 483.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "int main(){
+	int x = 5;
+	__x;
+	printf(\"%d\",x);
+	return 0;
+}"
+
+[node name="header" type="Label" parent="Scroll"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 214.0
+offset_right = 432.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "#include<stdio.h>"
+
+[node name="Options" type="Node" parent="."]
+
+[node name="Wrong Option 1" type="TextureButton" parent="Options"]
+offset_left = 1038.0
+offset_top = 192.0
+offset_right = 1421.0
+offset_bottom = 366.0
+toggle_mode = true
+texture_normal = ExtResource("3_ko3ok")
+texture_pressed = ExtResource("4_hpowm")
+texture_hover = ExtResource("5_l7fba")
+stretch_mode = 0
+
+[node name="Option1" type="Label" parent="Options/Wrong Option 1"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 39.0
+offset_right = 364.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_vgw0m")
+theme_override_font_sizes/font_size = 100
+text = "+1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Wrong Option 2" type="TextureButton" parent="Options"]
+offset_left = 1542.0
+offset_top = 421.0
+offset_right = 1926.0
+offset_bottom = 592.0
+toggle_mode = true
+texture_normal = ExtResource("3_ko3ok")
+texture_pressed = ExtResource("4_hpowm")
+texture_hover = ExtResource("5_l7fba")
+stretch_mode = 0
+
+[node name="Option2" type="Label" parent="Options/Wrong Option 2"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 40.0
+offset_right = 342.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_vgw0m")
+theme_override_font_sizes/font_size = 100
+text = "1+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Wrong Option 3" type="TextureButton" parent="Options"]
+offset_left = 1541.0
+offset_top = 188.0
+offset_right = 1925.0
+offset_bottom = 362.0
+toggle_mode = true
+texture_normal = ExtResource("3_ko3ok")
+texture_pressed = ExtResource("4_hpowm")
+texture_hover = ExtResource("5_l7fba")
+stretch_mode = 0
+
+[node name="Option3" type="Label" parent="Options/Wrong Option 3"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 40.0
+offset_right = 351.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_vgw0m")
+theme_override_font_sizes/font_size = 100
+text = "1++"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right Option 4" type="TextureButton" parent="Options"]
+offset_left = 1043.0
+offset_top = 422.0
+offset_right = 1427.0
+offset_bottom = 594.0
+toggle_mode = true
+texture_normal = ExtResource("3_ko3ok")
+texture_pressed = ExtResource("6_i3vv1")
+texture_hover = ExtResource("5_l7fba")
+stretch_mode = 0
+
+[node name="Option4" type="Label" parent="Options/Right Option 4"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 42.0
+offset_right = 385.0
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_vgw0m")
+theme_override_font_sizes/font_size = 100
+text = "++"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Course ProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 1297.0
+offset_top = 42.0
+offset_right = 1915.0
+offset_bottom = 129.0
+value = 40.0
+nine_patch_stretch = true
+texture_under = ExtResource("7_k4x44")
+texture_over = ExtResource("8_seie0")
+texture_progress = ExtResource("9_r7qha")
+
+[node name="Progress" type="Label" parent="."]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 38.0
+offset_right = 1265.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(1, 0.792157, 0.258824, 1)
+theme_override_font_sizes/font_size = 80
+text = "Progress"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2094.0
+offset_top = 912.0
+offset_right = 2255.0
+offset_bottom = 1205.0
+rotation = 1.57827
+texture_normal = ExtResource("10_7oavh")
+stretch_mode = 0
+flip_h = true
+
+[node name="Next" type="Label" parent="Next Button"]
+layout_mode = 0
+offset_left = 43.7765
+offset_top = 237.68
+offset_right = 243.777
+offset_bottom = 348.68
+rotation = -1.57897
+theme_override_font_sizes/font_size = 70
+text = "Next"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Previous Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 908.0
+offset_right = 487.0
+offset_bottom = 1201.0
+rotation = 1.57827
+texture_normal = ExtResource("10_7oavh")
+stretch_mode = 0
+flip_h = true
+flip_v = true
+
+[node name="Previous Button" type="Label" parent="Previous Button"]
+layout_mode = 0
+offset_left = 45.9484
+offset_top = 260.664
+offset_right = 260.948
+offset_bottom = 364.664
+rotation = -1.58259
+theme_override_font_sizes/font_size = 60
+text = "Prev"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Question" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 723.0
+offset_right = 1748.0
+offset_bottom = 1064.0
+texture = ExtResource("11_oujos")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="Question"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 22.0
+offset_right = 1331.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_enhrj")
+theme_override_font_sizes/font_size = 60
+text = "Q.What Would be the correct option to fill 
+in the blank space to increment the value 
+of variable x by 1."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" parent="." instance=ExtResource("15_2p5q3")]
+
+[connection signal="pressed" from="Next Button" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Previous Button" to="." method="_on_previous_button_pressed"]

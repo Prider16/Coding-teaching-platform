@@ -1,0 +1,218 @@
+[gd_scene load_steps=16 format=3 uid="uid://rdnxw1q4fvur"]
+
+[ext_resource type="Texture2D" uid="uid://rbgeuf04xjgi" path="res://Assets/Untitled61.png" id="1_5jmkr"]
+[ext_resource type="Script" path="res://Levels/Interface/Home Pase.gd" id="1_6e8gg"]
+[ext_resource type="Texture2D" uid="uid://dxe4bf8u3nb6m" path="res://Assets/texts/WideSlider_WhiteOutline_Frame.png" id="2_qau8o"]
+[ext_resource type="FontFile" uid="uid://d22hc8mbnbru3" path="res://Assets/texts/Born2bSportyV2.ttf" id="3_6v4g4"]
+[ext_resource type="Texture2D" uid="uid://b6yvpuwd3n7hw" path="res://Assets/texts/sdv.png" id="4_amqvq"]
+[ext_resource type="Texture2D" uid="uid://dnfymkejef6vf" path="res://Assets/Fonts and GUI/Fonts and GUI/Icons/SVG/Icon_Small_WhiteOutline_X.svg" id="4_iheec"]
+[ext_resource type="Texture2D" uid="uid://dsuy1d2x6xg6s" path="res://Assets/Fonts and GUI/Fonts and GUI/Icons/SVG/Icon_Small_Blank_X.svg" id="5_3ssks"]
+[ext_resource type="AudioStream" uid="uid://bba2watssv1ma" path="res://Assets/Sound/Click_02.ogg" id="8_gl1li"]
+[ext_resource type="PackedScene" uid="uid://ca356peuwdlly" path="res://Levels/Interface/UI Canvas.tscn" id="9_b2cvr"]
+[ext_resource type="Texture2D" uid="uid://cgykiifea3y4q" path="res://Assets/texts/Untitled68_1-removebg-preview.png" id="10_msqp6"]
+[ext_resource type="Texture2D" uid="uid://cm6xv3kxuf22m" path="res://Assets/texts/download__3_-removebg-preview.png" id="11_umj73"]
+[ext_resource type="Texture2D" uid="uid://cpk4s7brpkffn" path="res://Assets/texts/Untitled76.png" id="12_yv4yx"]
+
+[sub_resource type="Animation" id="Animation_x8sp3"]
+resource_name = "Fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7aamq"]
+resource_name = "Fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5tusq"]
+_data = {
+"Fade_in": SubResource("Animation_x8sp3"),
+"Fade_out": SubResource("Animation_7aamq")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6e8gg")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.792157)
+layout_mode = 0
+offset_right = 2118.0
+offset_bottom = 1094.0
+texture = ExtResource("1_5jmkr")
+
+[node name="Start button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 596.0
+offset_right = 969.0
+offset_bottom = 807.0
+texture_normal = ExtResource("2_qau8o")
+texture_hover = ExtResource("4_amqvq")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Start button"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 53.0
+offset_right = 345.0
+offset_bottom = 153.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6v4g4")
+theme_override_font_sizes/font_size = 100
+text = "START"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1238.0
+offset_top = 591.0
+offset_right = 1723.0
+offset_bottom = 802.0
+texture_normal = ExtResource("2_qau8o")
+texture_hover = ExtResource("4_amqvq")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Settings button"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 52.0
+offset_right = 400.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6v4g4")
+theme_override_font_sizes/font_size = 100
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1890.0
+offset_top = 829.0
+offset_right = 2052.0
+offset_bottom = 991.0
+texture_normal = ExtResource("4_iheec")
+texture_hover = ExtResource("5_3ssks")
+
+[node name="Label" type="Label" parent="Exit button"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 154.0
+offset_right = 149.0
+offset_bottom = 234.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6v4g4")
+theme_override_font_sizes/font_size = 80
+text = "EXIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" parent="." instance=ExtResource("9_b2cvr")]
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5tusq")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+visible = false
+offset_right = 2153.0
+offset_bottom = 1134.0
+color = Color(0, 0, 0, 1)
+
+[node name="Transition2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5tusq")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition2"]
+visible = false
+offset_right = 2153.0
+offset_bottom = 1134.0
+color = Color(0, 0, 0, 1)
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(930, 576)
+stream = ExtResource("8_gl1li")
+volume_db = -20.0
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 548.0
+offset_top = -12.0
+offset_right = 1525.0
+offset_bottom = 616.0
+texture = ExtResource("10_msqp6")
+
+[node name="IIST icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 5.0
+offset_right = 239.0
+offset_bottom = 230.0
+texture = ExtResource("11_umj73")
+
+[node name="icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 279.0
+offset_top = -2.0
+offset_right = 510.0
+offset_bottom = 229.0
+texture = ExtResource("12_yv4yx")
+expand_mode = 1
+
+[connection signal="pressed" from="Start button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Settings button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Exit button" to="." method="_on_exit_button_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
+[connection signal="animation_finished" from="Transition2" to="." method="_on_transition_2_animation_finished"]

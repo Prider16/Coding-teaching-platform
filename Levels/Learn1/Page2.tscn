@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgne4nf1afbvv"]
+
+[ext_resource type="Texture2D" uid="uid://rbgeuf04xjgi" path="res://Assets/Untitled61.png" id="1_0rf0c"]
+[ext_resource type="Script" path="res://Levels/Learn1/Page2.gd" id="1_aosc8"]
+[ext_resource type="Texture2D" uid="uid://bfcvjqg7vrv0i" path="res://Assets/texts/black board.jpg" id="2_roj0m"]
+[ext_resource type="Texture2D" uid="uid://buowgqjj665b4" path="res://Assets/scroll/pngs/parts/ribbon.png" id="3_7io8f"]
+[ext_resource type="Texture2D" uid="uid://74lrycw4iw2s" path="res://Assets/Untitled75-removebg-preview.png" id="4_u6kxw"]
+[ext_resource type="PackedScene" uid="uid://ca356peuwdlly" path="res://Levels/Interface/UI Canvas.tscn" id="6_5ogas"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aosc8")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.745098)
+layout_mode = 0
+offset_right = 2118.0
+offset_bottom = 1094.0
+texture = ExtResource("1_0rf0c")
+
+[node name="BlackBoard" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 50.0
+offset_right = 1416.0
+offset_bottom = 892.0
+texture = ExtResource("2_roj0m")
+
+[node name="Teacher" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 860.0
+offset_top = 191.0
+offset_right = 2306.0
+offset_bottom = 1219.0
+texture = ExtResource("4_u6kxw")
+
+[node name="Previous Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 908.0
+offset_right = 487.0
+offset_bottom = 1201.0
+rotation = 1.57827
+texture_normal = ExtResource("3_7io8f")
+stretch_mode = 0
+flip_h = true
+flip_v = true
+
+[node name="Previous Button" type="Label" parent="Previous Button"]
+layout_mode = 0
+offset_left = 45.9484
+offset_top = 260.664
+offset_right = 260.948
+offset_bottom = 364.664
+rotation = -1.58259
+theme_override_font_sizes/font_size = 60
+text = "Prev"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2108.0
+offset_top = 911.0
+offset_right = 2269.0
+offset_bottom = 1204.0
+rotation = 1.57827
+texture_normal = ExtResource("3_7io8f")
+stretch_mode = 0
+flip_h = true
+
+[node name="Previous Button" type="Label" parent="Next Button"]
+layout_mode = 0
+offset_left = 45.9484
+offset_top = 260.664
+offset_right = 260.948
+offset_bottom = 364.664
+rotation = -1.58259
+theme_override_font_sizes/font_size = 60
+text = "Next
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Code" type="Label" parent="."]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 103.0
+offset_right = 1068.0
+offset_bottom = 186.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+text = "Single-Line_Comments"
+
+[node name="Points" type="Label" parent="."]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 202.0
+offset_right = 1344.0
+offset_bottom = 776.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "1) Single-line comments start with two forward slashes (//).
+
+2) Any text between // and the end of the line is ignored by the
+compiler (will not be executed).
+
+3) Example:-
+
+// This is a comment
+printf(\"Hello World!\");
+"
+
+[node name="CanvasLayer" parent="." instance=ExtResource("6_5ogas")]
+
+[connection signal="pressed" from="Previous Button" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="Next Button" to="." method="_on_next_button_pressed"]

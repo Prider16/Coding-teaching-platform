@@ -1,0 +1,263 @@
+[gd_scene load_steps=16 format=3 uid="uid://edprvywtt6k0"]
+
+[ext_resource type="Script" path="res://Levels/Level6/Level 6c.gd" id="1_hfjrp"]
+[ext_resource type="Texture2D" uid="uid://rbgeuf04xjgi" path="res://Assets/Untitled61.png" id="1_igvp3"]
+[ext_resource type="Texture2D" uid="uid://cwc3md34mq1ev" path="res://Assets/scroll/pngs/wide.png" id="2_hf34n"]
+[ext_resource type="Texture2D" uid="uid://cqiyycnakbagr" path="res://Assets/Wenrexa Assets GUI Dark Miko/Standart Button V1/Standart Button Disable/Standart Button Disable 3.png" id="3_11k7x"]
+[ext_resource type="Texture2D" uid="uid://bd3k4rsj6f44u" path="res://Assets/Wenrexa Assets GUI Dark Miko/Standart Button V2/Standart Button Active/Standart Button Active 3.png" id="4_b8tyd"]
+[ext_resource type="Texture2D" uid="uid://dqo8o8klsf2q1" path="res://Assets/Wenrexa Assets GUI Dark Miko/Standart Button V1/Standart Button Active/Standart Button Active 3.png" id="5_0vcp7"]
+[ext_resource type="Texture2D" uid="uid://xscdp5kwtbjx" path="res://Assets/Wenrexa Assets GUI Dark Miko/Standart Button V2/Standart Button Hover/Standart Button Hover 3.png" id="6_anmww"]
+[ext_resource type="Texture2D" uid="uid://ble52wfl6s5vf" path="res://Assets/Wenrexa Assets GUI Dark Miko/ProgressBar Light Blue/V1/Background Static.png" id="7_2ulfc"]
+[ext_resource type="FontFile" uid="uid://qbwj8dicp03v" path="res://Assets/texts/TTVTechPrecomputer.ttf" id="7_4xxf2"]
+[ext_resource type="Texture2D" uid="uid://kuge4nc0iqox" path="res://Assets/Wenrexa Assets GUI Dark Miko/ProgressBar Light Blue/V1/Foreground.png" id="8_r4e0m"]
+[ext_resource type="Texture2D" uid="uid://c7v4n4o7j60pu" path="res://Assets/Wenrexa Assets GUI Dark Miko/ProgressBar Light Blue/V1/Background Bar.png" id="9_2l17p"]
+[ext_resource type="Texture2D" uid="uid://buowgqjj665b4" path="res://Assets/scroll/pngs/parts/ribbon.png" id="10_mwciw"]
+[ext_resource type="Texture2D" uid="uid://cd6jepabh2as2" path="res://Assets/scroll/pngs/parts/paper.png" id="11_xhrop"]
+[ext_resource type="FontFile" uid="uid://bshq20md5oncb" path="res://Assets/texts/ComputergamesOa.ttf" id="14_jguhj"]
+[ext_resource type="PackedScene" uid="uid://ca356peuwdlly" path="res://Levels/Interface/UI Canvas.tscn" id="15_5tbo3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hfjrp")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.745098)
+layout_mode = 0
+offset_right = 2118.0
+offset_bottom = 1094.0
+texture = ExtResource("1_igvp3")
+
+[node name="Scroll" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 33.0
+offset_right = 905.0
+offset_bottom = 702.0
+texture = ExtResource("2_hf34n")
+expand_mode = 1
+
+[node name="Code" type="Label" parent="Scroll"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 261.0
+offset_right = 774.0
+offset_bottom = 483.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "int main(){
+	int x=50, y=5;
+__(x _ y){printf(\"Hello World\");}
+	return 0;
+}"
+
+[node name="header" type="Label" parent="Scroll"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 214.0
+offset_right = 432.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "#include<stdio.h>"
+
+[node name="Options" type="Node" parent="."]
+
+[node name="Wrong Option 1" type="TextureButton" parent="Options"]
+offset_left = 1059.0
+offset_top = 420.0
+offset_right = 1442.0
+offset_bottom = 594.0
+toggle_mode = true
+texture_normal = ExtResource("3_11k7x")
+texture_pressed = ExtResource("4_b8tyd")
+texture_hover = ExtResource("5_0vcp7")
+stretch_mode = 0
+
+[node name="Option1" type="Label" parent="Options/Wrong Option 1"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 39.0
+offset_right = 364.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_4xxf2")
+theme_override_font_sizes/font_size = 100
+text = "If >="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Wrong Option 2" type="TextureButton" parent="Options"]
+offset_left = 1059.0
+offset_top = 187.0
+offset_right = 1443.0
+offset_bottom = 358.0
+toggle_mode = true
+texture_normal = ExtResource("3_11k7x")
+texture_pressed = ExtResource("4_b8tyd")
+texture_hover = ExtResource("5_0vcp7")
+stretch_mode = 0
+
+[node name="Option2" type="Label" parent="Options/Wrong Option 2"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 341.0
+offset_bottom = 126.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_4xxf2")
+theme_override_font_sizes/font_size = 100
+text = "else >="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Wrong Option 3" type="TextureButton" parent="Options"]
+offset_left = 1568.0
+offset_top = 176.0
+offset_right = 1952.0
+offset_bottom = 350.0
+toggle_mode = true
+texture_normal = ExtResource("3_11k7x")
+texture_pressed = ExtResource("4_b8tyd")
+texture_hover = ExtResource("5_0vcp7")
+stretch_mode = 0
+
+[node name="Option3" type="Label" parent="Options/Wrong Option 3"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 40.0
+offset_right = 351.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_4xxf2")
+theme_override_font_sizes/font_size = 100
+text = "else =>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right Option 4" type="TextureButton" parent="Options"]
+offset_left = 1559.0
+offset_top = 419.0
+offset_right = 1943.0
+offset_bottom = 591.0
+toggle_mode = true
+texture_normal = ExtResource("3_11k7x")
+texture_pressed = ExtResource("6_anmww")
+texture_hover = ExtResource("5_0vcp7")
+stretch_mode = 0
+
+[node name="Option4" type="Label" parent="Options/Right Option 4"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 42.0
+offset_right = 385.0
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_4xxf2")
+theme_override_font_sizes/font_size = 100
+text = "if >="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Course ProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 1279.0
+offset_top = 41.0
+offset_right = 1897.0
+offset_bottom = 128.0
+value = 40.0
+nine_patch_stretch = true
+texture_under = ExtResource("7_2ulfc")
+texture_over = ExtResource("8_r4e0m")
+texture_progress = ExtResource("9_2l17p")
+
+[node name="Progress" type="Label" parent="."]
+layout_mode = 0
+offset_left = 912.0
+offset_top = 32.0
+offset_right = 1249.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(1, 0.792157, 0.258824, 1)
+theme_override_font_sizes/font_size = 80
+text = "Progress"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2094.0
+offset_top = 912.0
+offset_right = 2255.0
+offset_bottom = 1205.0
+rotation = 1.57827
+texture_normal = ExtResource("10_mwciw")
+stretch_mode = 0
+flip_h = true
+
+[node name="Next" type="Label" parent="Next Button"]
+layout_mode = 0
+offset_left = 43.7765
+offset_top = 237.68
+offset_right = 243.777
+offset_bottom = 348.68
+rotation = -1.57897
+theme_override_font_sizes/font_size = 70
+text = "Next"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Previous Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 908.0
+offset_right = 487.0
+offset_bottom = 1201.0
+rotation = 1.57827
+texture_normal = ExtResource("10_mwciw")
+stretch_mode = 0
+flip_h = true
+flip_v = true
+
+[node name="Previous Button" type="Label" parent="Previous Button"]
+layout_mode = 0
+offset_left = 45.9484
+offset_top = 260.664
+offset_right = 260.948
+offset_bottom = 364.664
+rotation = -1.58259
+theme_override_font_sizes/font_size = 60
+text = "Prev"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Question" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 723.0
+offset_right = 1748.0
+offset_bottom = 1064.0
+texture = ExtResource("11_xhrop")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="Question"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 22.0
+offset_right = 1331.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_jguhj")
+theme_override_font_sizes/font_size = 60
+text = "Q.Complete the code to print \"Hello World\"
+when x is grater than and equal to  y."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" parent="." instance=ExtResource("15_5tbo3")]
+
+[connection signal="pressed" from="Next Button" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Previous Button" to="." method="_on_previous_button_pressed"]

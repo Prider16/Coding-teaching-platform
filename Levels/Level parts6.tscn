@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://bloqhqxttqm0m"]
+
+[ext_resource type="Texture2D" uid="uid://rbgeuf04xjgi" path="res://Assets/Untitled61.png" id="1_7lxbu"]
+[ext_resource type="Script" path="res://Levels/Level parts6.gd" id="1_v3s8f"]
+[ext_resource type="Texture2D" uid="uid://dxaa8a2hl6ag5" path="res://Assets/Wenrexa Assets GUI Dark Miko/Standart Button V1/Standart Button Hover/Standart Button Hover 2.png" id="2_p4bxe"]
+[ext_resource type="Texture2D" uid="uid://c2wb1ss1qtbil" path="res://Assets/Wenrexa Assets GUI Dark Miko/Standart Button V1/Standart Button Normal/Standart Button Normal 2.png" id="3_ejapj"]
+[ext_resource type="Texture2D" uid="uid://buowgqjj665b4" path="res://Assets/scroll/pngs/parts/ribbon.png" id="4_31u40"]
+[ext_resource type="FontFile" uid="uid://d22hc8mbnbru3" path="res://Assets/texts/Born2bSportyV2.ttf" id="5_tqa40"]
+[ext_resource type="AudioStream" uid="uid://bba2watssv1ma" path="res://Assets/Sound/Click_02.ogg" id="6_0oebt"]
+[ext_resource type="PackedScene" uid="uid://ca356peuwdlly" path="res://Levels/Interface/UI Canvas.tscn" id="7_vviw3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v3s8f")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.733333)
+layout_mode = 0
+offset_right = 2118.0
+offset_bottom = 1094.0
+texture = ExtResource("1_7lxbu")
+
+[node name="Learn Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 456.0
+offset_right = 839.0
+offset_bottom = 671.0
+texture_normal = ExtResource("2_p4bxe")
+texture_hover = ExtResource("3_ejapj")
+stretch_mode = 0
+
+[node name="Text2" type="Label" parent="Learn Button"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 48.0
+offset_right = 351.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_tqa40")
+theme_override_font_sizes/font_size = 120
+text = "Learn"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Click1" type="AudioStreamPlayer2D" parent="Learn Button"]
+position = Vector2(930, 576)
+stream = ExtResource("6_0oebt")
+volume_db = -20.0
+
+[node name="Question Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1286.0
+offset_top = 447.0
+offset_right = 1721.0
+offset_bottom = 662.0
+texture_normal = ExtResource("2_p4bxe")
+texture_hover = ExtResource("3_ejapj")
+stretch_mode = 0
+
+[node name="Text" type="Label" parent="Question Button"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 43.0
+offset_right = 408.0
+offset_bottom = 163.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_tqa40")
+theme_override_font_sizes/font_size = 110
+text = "Practice"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Click2" type="AudioStreamPlayer2D" parent="Question Button"]
+position = Vector2(930, 576)
+stream = ExtResource("6_0oebt")
+volume_db = -20.0
+
+[node name="Previous Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 908.0
+offset_right = 512.0
+offset_bottom = 1201.0
+rotation = 1.57827
+texture_normal = ExtResource("4_31u40")
+stretch_mode = 0
+flip_h = true
+flip_v = true
+
+[node name="Previous Button" type="Label" parent="Previous Button"]
+layout_mode = 0
+offset_left = 45.9484
+offset_top = 260.664
+offset_right = 260.948
+offset_bottom = 364.664
+rotation = -1.58259
+theme_override_font_sizes/font_size = 60
+text = "Prev"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Click3" type="AudioStreamPlayer2D" parent="Previous Button"]
+position = Vector2(930, 576)
+stream = ExtResource("6_0oebt")
+volume_db = -20.0
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_vviw3")]
+
+[connection signal="pressed" from="Learn Button" to="." method="_on_learn_button_pressed"]
+[connection signal="finished" from="Learn Button/Click1" to="." method="_on_click_1_finished"]
+[connection signal="pressed" from="Question Button" to="." method="_on_question_button_pressed"]
+[connection signal="finished" from="Question Button/Click2" to="." method="_on_click_2_finished"]
+[connection signal="pressed" from="Previous Button" to="." method="_on_previous_button_pressed"]
+[connection signal="finished" from="Previous Button/Click3" to="." method="_on_click_3_finished"]

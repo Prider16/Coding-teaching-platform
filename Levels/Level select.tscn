@@ -1,0 +1,277 @@
+[gd_scene load_steps=9 format=3 uid="uid://cniwyextjibij"]
+
+[ext_resource type="Script" path="res://Levels/Level select.gd" id="1_rgi41"]
+[ext_resource type="Texture2D" uid="uid://ch8dy6kmjcy07" path="res://Assets/Untitled67.png" id="2_exu52"]
+[ext_resource type="Texture2D" uid="uid://1k0viuvagmtj" path="res://Assets/Wenrexa Assets GUI Dark Miko/Custom Big Buttons/Custom Buttons Normal/Custom Button Normal 1.png" id="3_esg36"]
+[ext_resource type="Texture2D" uid="uid://ce4nppg21f7b1" path="res://Assets/Wenrexa Assets GUI Dark Miko/Custom Big Buttons/Custom Buttons Hover/Custom Button Hover 1.png" id="4_s08e2"]
+[ext_resource type="PackedScene" uid="uid://ca356peuwdlly" path="res://Levels/Interface/UI Canvas.tscn" id="5_2q1cl"]
+
+[sub_resource type="Animation" id="Animation_7aamq"]
+resource_name = "Fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_x8sp3"]
+resource_name = "Fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5tusq"]
+_data = {
+"Fade_in": SubResource("Animation_x8sp3"),
+"Fade_out": SubResource("Animation_7aamq")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rgi41")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2118.0
+offset_bottom = 1094.0
+texture = ExtResource("2_exu52")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 683.0
+offset_bottom = 114.0
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Level1" type="TextureButton" parent="Node"]
+offset_left = 835.0
+offset_top = 977.0
+offset_right = 896.0
+offset_bottom = 1038.0
+texture_normal = ExtResource("3_esg36")
+texture_hover = ExtResource("4_s08e2")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Node/Level1"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -2.0
+offset_right = 53.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level2" type="TextureButton" parent="Node"]
+offset_left = 935.0
+offset_top = 837.0
+offset_right = 996.0
+offset_bottom = 898.0
+texture_normal = ExtResource("3_esg36")
+texture_hover = ExtResource("4_s08e2")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Node/Level2"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -1.0
+offset_right = 52.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level3" type="TextureButton" parent="Node"]
+offset_left = 1083.0
+offset_top = 741.0
+offset_right = 1144.0
+offset_bottom = 802.0
+texture_normal = ExtResource("3_esg36")
+texture_hover = ExtResource("4_s08e2")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Node/Level3"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -1.0
+offset_right = 51.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level4" type="TextureButton" parent="Node"]
+offset_left = 1267.0
+offset_top = 658.0
+offset_right = 1328.0
+offset_bottom = 719.0
+texture_normal = ExtResource("3_esg36")
+texture_hover = ExtResource("4_s08e2")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Node/Level4"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -2.0
+offset_right = 51.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level5" type="TextureButton" parent="Node"]
+offset_left = 1509.0
+offset_top = 581.0
+offset_right = 1570.0
+offset_bottom = 642.0
+texture_normal = ExtResource("3_esg36")
+texture_hover = ExtResource("4_s08e2")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Node/Level5"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 1.0
+offset_right = 52.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level6" type="TextureButton" parent="Node"]
+offset_left = 1581.0
+offset_top = 440.0
+offset_right = 1642.0
+offset_bottom = 501.0
+texture_normal = ExtResource("3_esg36")
+texture_hover = ExtResource("4_s08e2")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Node/Level6"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level7" type="TextureButton" parent="Node"]
+offset_left = 1720.0
+offset_top = 325.0
+offset_right = 1781.0
+offset_bottom = 386.0
+texture_normal = ExtResource("3_esg36")
+texture_hover = ExtResource("4_s08e2")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Node/Level7"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -1.0
+offset_right = 52.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level8" type="TextureButton" parent="Node"]
+offset_left = 1951.0
+offset_top = 288.0
+offset_right = 2012.0
+offset_bottom = 349.0
+texture_normal = ExtResource("3_esg36")
+texture_hover = ExtResource("4_s08e2")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Node/Level8"]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 52.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" parent="." instance=ExtResource("5_2q1cl")]
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5tusq")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+offset_right = 2153.0
+offset_bottom = 1134.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Node/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Node/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Node/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Node/Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Node/Level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="Node/Level6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="Node/Level7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="Node/Level8" to="." method="_on_level_8_pressed"]
